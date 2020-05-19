@@ -1,12 +1,8 @@
 function adjacentElementsProduct(inputArray: number[]): number {
     let product = 0;
-    let i=0;
-    while(i<inputArray.length){
-        if(i % 2==0){
-            let quotient = inputArray[i] * inputArray[i+1];
-            product = quotient > product? quotient: product;
-        }
-        i = i+2;
+    for(let i =0; i+1<inputArray.length;i++){
+        let quotient = inputArray[i] * inputArray[i+1];
+        product = quotient > product? quotient: product;
     }
     return product;
 }
